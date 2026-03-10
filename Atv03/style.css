@@ -53,12 +53,6 @@ body {
   min-height: 100vh;
 }
 
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-dark); }
-::-webkit-scrollbar-thumb { background: var(--accent-blue); border-radius: 3px; }
-
-
 h1, h2, h3, h4 {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
@@ -773,3 +767,4 @@ section:nth-child(5) { animation-delay: 0.25s; }
 article {
   animation: fadeUp 0.4s ease both;
 }
+
