@@ -16,8 +16,8 @@ function revelar() {
     document.getElementById("Alutra").classList.remove("placeholder");
     document.getElementById("Alutra").classList.add("card-text");
  
-    document.getElementById("Posição ").classList.remove("placeholder");
-    document.getElementById("Posição ").classList.add("card-text");
+    document.getElementById("Posição").classList.remove("placeholder");
+    document.getElementById("Posição").classList.add("card-text");
  
 }
  
