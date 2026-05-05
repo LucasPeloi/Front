@@ -1,6 +1,6 @@
 function revelar() {
  
-    document.querySelector(".card-img-top").src = "https://lucaspeloi.github.io/Front/provas/dia1/img/viniciusjunior.png";
+    document.querySelector(".card-img-top").src = "https://lucaspeloi.github.io/Front/provas/dia3/img/_vinicius_junior.png";
  
     document.getElementById("Nome").innerHTML = "Vinícius Júnior <span class='badge text-bg-secondary'>9,5</span>";
  
