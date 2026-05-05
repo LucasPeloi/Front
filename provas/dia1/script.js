@@ -1,7 +1,7 @@
 function revelar() {
  
     // Troca a imagem placeholder pela foto do Vini Jr
-    document.querySelector(".card-img-top").src = "img/_vinicius_junior.png";
+    document.querySelector(".card-img-top").src = "dia1/img/_vinicius_junior.png";
  
     // Preenche o nome no h5 e o rank no span
     document.getElementById("Nome").innerHTML = "Vinícius Júnior <span class='badge text-bg-secondary'>9,5</span>";
