@@ -2,6 +2,8 @@ function add() {
  
     var novoCard = document.createElement("div");
     novoCard.classList.add("card");
+    novoCard.style.width = "24rem";
+    novoCard.style.margin = "10px";
  
     novoCard.innerHTML = `
         <img src="img/Lucas_Paqueta.webp" class="card-img-top" alt="Lucas Paquetá">
