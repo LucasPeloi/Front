@@ -1,6 +1,6 @@
 function revelar() {
  
-    document.querySelector(".card-img-top").src = "img/_vinicius_junior.png";
+    document.querySelector(".card-img-top").src = "img/viniciusjunior.png";
  
     document.getElementById("Nome").innerHTML = "Vinícius Júnior <span class='badge text-bg-secondary'>9,5</span>";
  
