@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 04 - Infinity Bank</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; }
+        input, select { margin: 5px 0; display: block; }
+        #resultado { margin-top: 15px; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <h2>Simulador Infinity Bank</h2>
+
+    <label>Bandeira:</label>
+    <select id="bandeira">
+        <option value="visa">Visa</option>
+        <option value="master">Master</option>
+        <option value="elo">Elo</option>
+    </select>
+
+    <label>Valor da venda (R$):</label>
+    <input type="number" id="valor" step="0.01">
+
+    <label>Número de parcelas:</label>
+    <input type="number" id="parcelas" min="1">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcular() {
+            var bandeira = document.getElementById("bandeira").value;
+            var valor = Number(document.getElementById("valor").value);
+            var parcelas = Number(document.getElementById("parcelas").value);
+
+            var taxaBandeira = 0;
+
+            switch (bandeira) {
+                case "visa":
+                    taxaBandeira = valor * 0.02;
+                    break;
+                case "master":
+                    taxaBandeira = valor * 0.0185;
+                    break;
+                case "elo":
+                    taxaBandeira = valor * 0.03;
+                    break;
+            }
+
+            var juros = valor * (0.0035 * parcelas);
+            var taxaMensal = 12.50 * parcelas;
+            var total = valor + taxaBandeira + juros + taxaMensal;
+            var valorParcela = total / parcelas;
+
+            document.getElementById("resultado").innerHTML =
+                "<p><strong>Taxa da bandeira:</strong> R$ " + taxaBandeira.toFixed(2) + "</p>" +
+                "<p><strong>Juros totais:</strong> R$ " + juros.toFixed(2) + "</p>" +
+                "<p><strong>Taxa mensal:</strong> R$ " + taxaMensal.toFixed(2) + "</p>" +
+                "<p><strong>Valor de cada parcela:</strong> R$ " + valorParcela.toFixed(2) + "</p>";
+        }
+    </script>
+
+</body>
+</html>
