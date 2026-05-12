@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 01 - Validador de CPF</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; }
+        #resultado { margin-top: 15px; font-weight: bold; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+    <h2>Validador de CPF</h2>
+
+    <input type="text" id="cpf" placeholder="Digite o CPF (somente números)" maxlength="11">
+    <button onclick="validar()">Validar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function validar() {
+            var cpf = document.getElementById("cpf").value;
+            var resultado = document.getElementById("resultado");
+
+            var soma1 = 0;
+            for (var i = 0; i < 9; i++) {
+                soma1 += Number(cpf[i]) * (10 - i);
+            }
+            var resto1 = (soma1 * 10) % 11;
+            if (resto1 == 10) resto1 = 0;
+
+            var soma2 = 0;
+            for (var i = 0; i < 10; i++) {
+                soma2 += Number(cpf[i]) * (11 - i);
+            }
+            var resto2 = (soma2 * 10) % 11;
+            if (resto2 == 10) resto2 = 0;
+
+            if (resto1 == Number(cpf[9]) && resto2 == Number(cpf[10])) {
+                resultado.style.color = "green";
+                resultado.textContent = "CPF Válido!";
+            } else {
+                resultado.style.color = "red";
+                resultado.textContent = "CPF Inválido!";
+            }
+        }
+    </script>
+
+</body>
+</html>
